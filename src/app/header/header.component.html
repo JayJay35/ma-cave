@@ -1,3 +1,13 @@
-<p>
-  header works!
-</p>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: darkred">
+  <a class="navbar-brand" href="#">MaCave</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="cave">Accueil <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+  <a class="btn btn-secondary m-1" routerLink="auth/signup" role="button" *ngIf="!isAuth">Créer un compte</a>
+  <a class="btn btn-info m-1" routerLink="auth/signin" role="button" *ngIf="!isAuth" >Connexion</a>
+  <a (click)="onSignOut()" class="btn btn-dark m-1" *ngIf="isAuth">Déconnexion</a>
+</nav>
